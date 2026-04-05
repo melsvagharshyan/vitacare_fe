@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
+
+:root {
+  font-family: 'Montserrat', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: theme('colors.text-deep');
+}
+
+/* Ensure equal-height slides in subscriptions carousel */
+.subscriptions-slider .slick-track {
+  display: flex !important;
+}
+
+.subscriptions-slider .slick-slide {
+  height: auto;
+}
+
+.subscriptions-slider .slick-slide > div {
+  height: 100%;
+}

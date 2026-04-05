@@ -1,0 +1,214 @@
+{
+  "header": {
+    "main": "Main",
+    "aboutUs": "About us",
+    "subscriptions": "Subscriptions",
+    "blogNews": "Blog / News",
+    "contactUs": "Contact us",
+    "logIn": "Log in",
+    "register": "Register",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "headline": "WELLNESS MADE SIMPLE",
+    "ctaButton": "SEE SUBSCRIPTIONS"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "description": "Since 2011 we have helped thousands feel their best with premium vitamins and supplements. Our mission is honest formulas, transparent sourcing, and a routine you can stick to—delivered to your door.",
+    "learnMore": "LEARN MORE"
+  },
+  "aboutPage": {
+    "heroTitle": "About Us",
+    "heroSubtitle": "Stronger every day",
+    "welcomeTitle": "Welcome to Vital",
+    "welcomeBody": "Vital started with one question: how can everyday wellness be simple and trustworthy? We curate lab-tested vitamins, minerals, and supplements for busy people, families, and workplaces—so you can support immunity, energy, and long-term health without guesswork.",
+    "valuesHeading": "Our Values",
+    "valueQualityTitle": "Purity & potency",
+    "valueQualityDescription": "We partner with certified manufacturers and third-party testing so every batch meets strict quality standards.",
+    "valueSatisfactionTitle": "Customer care",
+    "valueSatisfactionDescription": "Your experience matters. Our team helps you choose the right products and adjust your plan whenever life changes.",
+    "valueHealthTitle": "Evidence-based wellness",
+    "valueHealthDescription": "We focus on ingredients and dosages aligned with current research—not trends without substance.",
+    "processHeading": "From formulation to your shelf",
+    "processCraftedTitle": "Formulated by experts",
+    "processCraftedDescription": "Nutritionists and partners design blends that work together and fit real lifestyles.",
+    "processDeliveredTitle": "Shipped with care",
+    "processDeliveredDescription": "Temperature-aware packing and reliable carriers keep your supplements protected in transit.",
+    "processEnjoyTitle": "Build your routine",
+    "processEnjoyDescription": "Subscribe for automatic refills or order as you go—consistency is easier when we handle the rest.",
+    "imgHeroAlt": "Vitamins and supplement bottles on a bright surface",
+    "imgChefAlt": "Specialist reviewing supplement formulations",
+    "imgProcessCraftedAlt": "Quality control of vitamin products",
+    "imgProcessDeliveredAlt": "Wellness package ready for delivery",
+    "imgProcessEnjoyAlt": "Person taking daily vitamins at home"
+  },
+  "subscriptionPage": {
+    "heroTitle": "Subscriptions",
+    "heroSubtitle": "Vitamin plans for home, office, and teams",
+    "intro": "Vital offers flexible supplement subscriptions for families, companies, and individuals. Choose curated packs or build your own stack—fresh batches on your schedule without running out.",
+    "sectionHeading": "Subscriptions",
+    "cardFamiliesTitle": "For families",
+    "cardFamiliesDescription": "Daily multivitamins and essentials for adults and kids in one household plan.",
+    "cardTeamsTitle": "For teams",
+    "cardTeamsDescription": "Corporate wellness boxes with immune and energy support for your staff.",
+    "cardPersonalizedTitle": "Personalized",
+    "cardPersonalizedDescription": "Mix and match products or get guidance from our wellness quiz.",
+    "viewPlans": "View plans",
+    "orderNow": "Get started",
+    "imgHeroAlt": "Assorted vitamins and supplements",
+    "imgFamiliesAlt": "Family wellness routine at home",
+    "imgTeamsAlt": "Workplace wellness supplements",
+    "imgPersonalizedAlt": "Personal vitamin subscription delivery",
+    "loading": "Loading subscriptions…",
+    "loadError": "We couldn’t load subscriptions. Please try again later.",
+    "empty": "No subscriptions are available right now."
+  },
+  "contactPage": {
+    "heroTitle": "Contacts",
+    "heroSubtitle": "We’re here to help",
+    "heroCta": "Call us +374 94 033 030",
+    "callTitle": "Call Us",
+    "callLineOne": "+374 94 000 000",
+    "callLineTwo": "Mon - Fri, 9:00 - 20:00",
+    "emailTitle": "Email Us",
+    "emailLineOne": "hello@vital.am",
+    "emailLineTwo": "Click here to email us",
+    "visitTitle": "Visit Us",
+    "visitLineOne": "291 Street, Kentron",
+    "visitLineTwo": "Yerevan, Armenia",
+    "formTitle": "Send Us a Message",
+    "formName": "Your Name",
+    "formEmail": "Your Email",
+    "formSubject": "Subject",
+    "formMessage": "Your Message",
+    "formButton": "SEND MESSAGE",
+    "mapAlt": "Map placeholder",
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameTooLong": "Name is too long",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "subjectRequired": "Subject is required",
+      "subjectTooLong": "Subject is too long",
+      "messageRequired": "Message is required",
+      "messageTooLong": "Message is too long"
+    }
+  },
+  "blogPage": {
+    "heroTitle": "Blog / News",
+    "heroSubtitle": "Guides, research, and tips for smarter supplementation",
+    "searchPlaceholder": "Search articles...",
+    "filters": {
+      "all": "All",
+      "healthTips": "Health tips",
+      "recipes": "Product guides",
+      "nutrition": "Ingredients"
+    },
+    "cardTitle": "Vitamin D: how much do you really need?",
+    "cardExcerpt": "Lorem ipsum dolor sit amet consectetur. Enim ut id ut tempus nibh vitae in et sed. Sit cras malesuada est in tincidunt.",
+    "publishDate": "Publish date",
+    "cardImageAlt": "Supplements and healthy lifestyle",
+    "noResults": "No articles found",
+    "loadMore": "LOAD MORE"
+  },
+  "menuOverview": {
+    "title": "Popular picks from our catalog",
+    "subtitle": "Best sellers our customers reorder every month.",
+    "items": {
+      "gourmetBurgers": "Daily multivitamins",
+      "chickenWings": "Omega-3 fish oil",
+      "thirstQuenchers": "Vitamin D3 + K2"
+    },
+    "viewFullMenu": "VIEW ALL PRODUCTS"
+  },
+  "newsPromo": {
+    "label": "NEWS",
+    "headline": "Use your company code — get 10% off your first subscription",
+    "learnMore": "LEARN MORE"
+  },
+  "weHandle": {
+    "title": "Why Vital",
+    "services": {
+      "seasonalMenu": "Curated & rotating\nproduct lines",
+      "cooking": "Third-party tested\nformulas",
+      "delivery": "Flexible delivery &\nsubscription control"
+    },
+    "learnMore": "LEARN MORE"
+  },
+  "partners": {
+    "title": "Partners"
+  },
+  "subscriptions": {
+    "title": "Subscriptions",
+    "familyLunch": {
+      "title": "FAMILY WELLNESS",
+      "description": "Complete daily support for every age in your home"
+    },
+    "officeLunch": {
+      "title": "OFFICE VITALITY",
+      "description": "Team packs for focus, immunity, and steady energy"
+    },
+    "corporatives": {
+      "title": "CORPORATE HEALTH",
+      "description": "Scalable wellness programs for companies of any size"
+    },
+    "viewMore": "VIEW MORE",
+    "viewFullMenu": "VIEW ALL PRODUCTS",
+    "prevAriaLabel": "Previous subscription",
+    "nextAriaLabel": "Next subscription"
+  },
+  "howToSubscribe": {
+    "title": "How to subscribe",
+    "subtitle": "Start your vitamin routine in three easy steps: pick a plan, tailor products to your goals, and receive refills automatically—or pause anytime.",
+    "steps": {
+      "choosePlan": {
+        "title": "Step 1 – Choose your plan",
+        "description": "Browse family packs, office bundles, or build a personal stack from our catalog."
+      },
+      "customizeMenu": {
+        "title": "Step 2 – Customize your stack",
+        "description": "Set dosages, add or swap products, and choose how often you want deliveries."
+      },
+      "receiveEnjoy": {
+        "title": "Step 3 – Receive & stay consistent",
+        "description": "We pack and ship on your schedule. Reminders and flexible dates help you never miss a day."
+      }
+    },
+    "cta": "See subscriptions"
+  },
+  "modal": {
+    "close": "Close",
+    "welcome": {
+      "title": "Welcome",
+      "subtitle": "Log in or register to your account",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "Write your email address here",
+      "emailInvalid": "Incorrect email format",
+      "continue": "Continue"
+    },
+    "verification": {
+      "title": "Verification",
+      "instruction": "We have sent a 6 digit code to your email - {{email}}, please write the code here to continue.",
+      "goBack": "Go back",
+      "digitLabel": "Digit {{index}}"
+    }
+  },
+  "footer": {
+    "main": "Main",
+    "reports": "Reports",
+    "faq": "FAQ",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "weekDays": {
+    "1": "Mon",
+    "2": "Tue",
+    "3": "Wed",
+    "4": "Thu",
+    "5": "Fri",
+    "6": "Sat",
+    "7": "Sun"
+  }
+}
