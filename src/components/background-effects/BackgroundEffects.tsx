@@ -105,27 +105,49 @@ const BackgroundEffects = memo(() => {
     return allBlobs;
   }, [isMobile, allBlobs]);
 
-  const getAnimationConfig = (blob: (typeof blobs)[0]) => {
+  const getMotionProps = (blob: (typeof blobs)[0]) => {
     const isImageBlob = 'imageUrl' in blob;
 
-    if (isMobile && !isImageBlob) return undefined;
+    if (isMobile && !isImageBlob) {
+      return { animate: undefined, transition: undefined };
+    }
+
+    const x = [
+      Math.sin(0) * blob.xRange,
+      Math.sin(Math.PI / 2) * blob.xRange,
+      Math.sin(Math.PI) * blob.xRange,
+      Math.sin((3 * Math.PI) / 2) * blob.xRange,
+      Math.sin(2 * Math.PI) * blob.xRange,
+    ];
+    const y = [
+      Math.cos(0) * blob.yRange,
+      Math.cos(Math.PI / 2) * blob.yRange,
+      Math.cos(Math.PI) * blob.yRange,
+      Math.cos((3 * Math.PI) / 2) * blob.yRange,
+      Math.cos(2 * Math.PI) * blob.yRange,
+    ];
+    const scale = [1, 1.1, 0.9, 1.1, 1];
+
+    const rotate: number[] = isImageBlob ? [0, 360] : [0, 14, -12, 10, 0];
+
+    const rotateDuration = isImageBlob
+      ? Math.max(blob.duration * 3, 36)
+      : blob.duration;
 
     return {
-      x: [
-        Math.sin(0) * blob.xRange,
-        Math.sin(Math.PI / 2) * blob.xRange,
-        Math.sin(Math.PI) * blob.xRange,
-        Math.sin((3 * Math.PI) / 2) * blob.xRange,
-        Math.sin(2 * Math.PI) * blob.xRange,
-      ],
-      y: [
-        Math.cos(0) * blob.yRange,
-        Math.cos(Math.PI / 2) * blob.yRange,
-        Math.cos(Math.PI) * blob.yRange,
-        Math.cos((3 * Math.PI) / 2) * blob.yRange,
-        Math.cos(2 * Math.PI) * blob.yRange,
-      ],
-      scale: [1, 1.1, 0.9, 1.1, 1],
+      animate: { x, y, scale, rotate },
+      transition: {
+        delay: blob.delay,
+        repeat: Infinity,
+        x: { duration: blob.duration, ease: 'easeInOut' },
+        y: { duration: blob.duration, ease: 'easeInOut' },
+        scale: { duration: blob.duration, ease: 'easeInOut' },
+        rotate: {
+          duration: rotateDuration,
+          ease: isImageBlob ? 'linear' : 'easeInOut',
+          repeat: Infinity,
+        },
+      },
     };
   };
 
@@ -150,7 +172,7 @@ const BackgroundEffects = memo(() => {
       }}
     >
       {blobs.map(blob => {
-        const animation = getAnimationConfig(blob);
+        const { animate, transition } = getMotionProps(blob);
         const isImageBlob = 'imageUrl' in blob;
 
         if (isImageBlob) {
@@ -162,22 +184,13 @@ const BackgroundEffects = memo(() => {
               aria-hidden
               draggable={false}
               loading="eager"
-              className={`absolute ${blob.size} ${blob.position} object-contain select-none [filter:drop-shadow(0_14px_36px_rgb(15_23_42_/_0.2))]`}
+              className={`absolute ${blob.size} ${blob.position} origin-center object-contain select-none [filter:drop-shadow(0_14px_36px_rgb(15_23_42_/_0.2))]`}
               style={{
                 willChange: isMobile ? 'auto' : 'transform',
                 opacity: isMobile ? 0.92 : 1,
               }}
-              animate={animation}
-              transition={
-                animation
-                  ? {
-                      duration: blob.duration,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                      delay: blob.delay,
-                    }
-                  : undefined
-              }
+              animate={animate}
+              transition={transition}
             />
           );
         }
@@ -185,22 +198,13 @@ const BackgroundEffects = memo(() => {
         return (
           <motion.div
             key={blob.id}
-            className={`absolute ${blob.size} ${blob.position} rounded-full blur-[80px] md:blur-[200px] opacity-70`}
+            className={`absolute ${blob.size} ${blob.position} origin-center rounded-full blur-[80px] md:blur-[200px] opacity-70`}
             style={{
               backgroundColor: blob.color,
               willChange: isMobile ? 'auto' : 'transform',
             }}
-            animate={animation}
-            transition={
-              animation
-                ? {
-                    duration: blob.duration,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: blob.delay,
-                  }
-                : undefined
-            }
+            animate={animate}
+            transition={transition}
           />
         );
       })}
