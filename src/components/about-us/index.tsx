@@ -1,13 +1,14 @@
 import yBackground from '~/assets/images/y.svg';
-import { useTranslation } from 'react-i18next';
 import Button from '../button';
 import { useNavigate } from 'react-router-dom';
 import { splitMultiline } from './utils/helpers/splitMultiline';
 
 const ABOUT_US_IMAGE = 'https://i.pinimg.com/1200x/90/08/af/9008af8d54095a38be2d3f3abac7db08.jpg';
 
+const ABOUT_DESCRIPTION =
+  '2011 թվականից մենք օգնել ենք հազարավոր մարդկանց՝ վիտամիններով և հավելումներով ավելի լավ զգալու համար։ Մեր առաքելությունը՝ ազնիվ բանաձևեր, թափանցիկ աղբյուրներ և ձեր դուռը հասնող ռեժիմ։';
+
 function AboutUs() {
-  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleNavigateAboutPage = () => {
@@ -41,7 +42,7 @@ function AboutUs() {
           >
             <img
               src={ABOUT_US_IMAGE}
-              alt={t('aboutUs.title')}
+              alt="Մեր մասին"
               className="w-full h-auto object-cover block"
               loading="lazy"
               decoding="async"
@@ -75,11 +76,11 @@ function AboutUs() {
               lg:text-h2 
               leading-tight md:leading-13 lg:leading-15 wrap-break-word"
             >
-              {t('aboutUs.title')}
+              Մեր մասին
             </h2>
 
             <h4 className="relative z-10 text-body-medium md:text-[18px] lg:text-h4 text-gray-80 m-0 wrap-break-word">
-              {splitMultiline(t('aboutUs.description')).map((line, index) => (
+              {splitMultiline(ABOUT_DESCRIPTION).map((line, index) => (
                 <div key={index}>{line}</div>
               ))}
             </h4>
@@ -89,7 +90,7 @@ function AboutUs() {
               size="small"
               tone="green"
               className="text-body-medium-bold uppercase mt-2 md:mt-3"
-              title={t('aboutUs.learnMore')}
+              title="ԻՄԱՑԵՔ ԱՎԵԼԻՆ"
               onClick={handleNavigateAboutPage}
             />
           </div>

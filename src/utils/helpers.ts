@@ -1,26 +1,20 @@
-export const getWeekDayKey = (day?: number) => {
-  if (!day) return null;
-  if (day < 1 || day > 7) return null;
-  return `weekDays.${day}`;
+const WEEKDAY_LABELS: Record<number, string> = {
+  1: 'Երկ',
+  2: 'Երք',
+  3: 'Չրք',
+  4: 'Հնգ',
+  5: 'Ուրբ',
+  6: 'Շբթ',
+  7: 'Կիր',
 };
 
-export const getWeekRangeLabel = (
-  weekStart?: number,
-  weekEnd?: number,
-  t?: (key: string) => string
-) => {
-  const startDayKey = getWeekDayKey(weekStart);
-  const endDayKey = getWeekDayKey(weekEnd);
-
-  if (!startDayKey || !endDayKey) return '';
-
-  const translate = t ?? (key => key);
-
-  if (startDayKey === endDayKey) {
-    return translate(startDayKey);
-  }
-
-  return `${translate(startDayKey)} - ${translate(endDayKey)}`;
+export const getWeekRangeLabel = (weekStart?: number, weekEnd?: number) => {
+  if (!weekStart || !weekEnd) return '';
+  const start = WEEKDAY_LABELS[weekStart];
+  const end = WEEKDAY_LABELS[weekEnd];
+  if (!start || !end) return '';
+  if (start === end) return start;
+  return `${start} - ${end}`;
 };
 
 export const formatPhoneHref = (phone?: string) => {

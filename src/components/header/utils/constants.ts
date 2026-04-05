@@ -1,6 +1,6 @@
 export const NAV_LINKS = [
-  { label: 'header.aboutUs', href: '/about-us' },
-  { label: 'header.vitamins', href: '/vitamins' },
-  { label: 'header.blogNews', href: '/blog-news' },
-  { label: 'header.contactUs', href: '/contacts' },
+  { label: 'Մեր մասին', href: '/about-us' },
+  { label: 'Վիտամիններ', href: '/vitamins' },
+  { label: 'Բլոգ / Նորություններ', href: '/blog-news' },
+  { label: 'Կապ մեզ հետ', href: '/contacts' },
 ];

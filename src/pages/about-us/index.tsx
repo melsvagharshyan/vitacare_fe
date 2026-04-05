@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { ABOUT_VALUE_ICONS } from './utils/images';
 import { PLACEHOLDER_IMAGES } from './utils/constants';
 
@@ -76,41 +75,39 @@ function ProcessCard({
 }
 
 function AboutUsPage() {
-  const { t } = useTranslation();
-
   // TODO: Replace this mock array with backend-provided data.
-  // The only requirement for `ProcessCard` is: `imageUrl`, `imageAlt`, `title`, `description`.
   const processItems = [
     {
       id: 'crafted',
       imageUrl: PLACEHOLDER_IMAGES.processCrafted,
-      imageAlt: t('aboutPage.imgProcessCraftedAlt'),
-      title: t('aboutPage.processCraftedTitle'),
-      description: t('aboutPage.processCraftedDescription'),
+      imageAlt: 'Վիտամինների որակի վերահսկում',
+      title: 'Մասնագետների ձևակերպում',
+      description:
+        'Սննդաբաններ և գործընկերներ մշակում են համակցություններ, որոնք համապատասխանում են իրական կյանքին։',
     },
     {
       id: 'delivered',
       imageUrl: PLACEHOLDER_IMAGES.processDelivered,
-      imageAlt: t('aboutPage.imgProcessDeliveredAlt'),
-      title: t('aboutPage.processDeliveredTitle'),
-      description: t('aboutPage.processDeliveredDescription'),
+      imageAlt: 'Առողջության փաթեթ առաքման համար',
+      title: 'Փաթեթավորում և առաքում',
+      description: 'Ճիշտ փաթեթավորում և ավտոմատացված առաքում՝ հավելումները պաշտպանելու համար։',
     },
     {
       id: 'enjoy',
       imageUrl: PLACEHOLDER_IMAGES.processEnjoy,
-      imageAlt: t('aboutPage.imgProcessEnjoyAlt'),
-      title: t('aboutPage.processEnjoyTitle'),
-      description: t('aboutPage.processEnjoyDescription'),
+      imageAlt: 'Անձը տանը ընդունում է վիտամիններ',
+      title: 'Կառուցեք ռեժիմը',
+      description: 'Կարգավորեք կրկնվող առաքումներ կամ պատվիրեք ըստ անհրաժեշտության։',
     },
   ];
 
   return (
     <main className="w-full bg-primary-bg">
       <AboutHero
-        title={t('aboutPage.heroTitle')}
-        subtitle={t('aboutPage.heroSubtitle')}
+        title="Մեր մասին"
+        subtitle="Ավելի ուժեղ ամեն օր"
         imageUrl={PLACEHOLDER_IMAGES.heroVegetables}
-        imageAlt={t('aboutPage.imgHeroAlt')}
+        imageAlt="Վիտամինների և հավելումների շիշեր"
       />
 
       <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16 lg:px-10">
@@ -118,31 +115,31 @@ function AboutUsPage() {
           <div className="flex flex-col justify-between gap-8 lg:w-[61%] lg:flex-none">
             <div>
               <h2 className="mb-4 text-h4-small text-primary md:text-h5-bold lg:text-h4-bold">
-                {t('aboutPage.welcomeTitle')}
+                Բարի գալուստ Vital
               </h2>
               <p className="m-0 text-body-large text-gray-80 md:text-h4">
-                {t('aboutPage.welcomeBody')}
+                Vital-ը ստեղծվել է մեկ հարցից․ ինչպե՞ս դարձնել առողջ ապրելակերպը պարզ և վստահելի։ Մենք ընտրում ենք
+                լաբորատոր ստուգված վիտամիններ, հանքային նյութեր և հավելումներ՝ զբաղված մարդկանց, ընտանիքների և
+                աշխատավայրերի համար։
               </p>
             </div>
             <div>
-              <h2 className="mb-6 font-sans text-h4-bold text-primary md:text-h5-bold">
-                {t('aboutPage.valuesHeading')}
-              </h2>
+              <h2 className="mb-6 font-sans text-h4-bold text-primary md:text-h5-bold">Մեր արժեքները</h2>
               <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-start lg:flex-nowrap">
                 <ValueCard
                   iconSrc={ABOUT_VALUE_ICONS.quality}
-                  title={t('aboutPage.valueQualityTitle')}
-                  description={t('aboutPage.valueQualityDescription')}
+                  title="Մաքրություն և ուժգնություն"
+                  description="Մենք համագործակցում ենք հավաստագրված արտադրողների և երրորդ կողմի փորձարկումների հետ։"
                 />
                 <ValueCard
                   iconSrc={ABOUT_VALUE_ICONS.customer}
-                  title={t('aboutPage.valueSatisfactionTitle')}
-                  description={t('aboutPage.valueSatisfactionDescription')}
+                  title="Հաճախորդի խնամք"
+                  description="Ձեր փորձառությունը կարևոր է։ Մեր թիմը օգնում է ընտրել ճիշտ արտադրանքը և փոփոխել պլանը։"
                 />
                 <ValueCard
                   iconSrc={ABOUT_VALUE_ICONS.health}
-                  title={t('aboutPage.valueHealthTitle')}
-                  description={t('aboutPage.valueHealthDescription')}
+                  title="Հիմնված ապացույցների վրա"
+                  description="Մենք կենտրոնանում ենք բաղադրիչների և դոզաների վրա, որոնք համապատասխանում են հետազոտություններին։"
                 />
               </div>
             </div>
@@ -150,7 +147,7 @@ function AboutUsPage() {
           <div className="h-full w-full lg:w-[39%] lg:flex-none lg:max-w-140">
             <img
               src={PLACEHOLDER_IMAGES.chefKitchen}
-              alt={t('aboutPage.imgChefAlt')}
+              alt="Մասնագետ՝ հավելումների ձևակերպում"
               className="h-full w-full rounded-2xl object-cover"
               loading="lazy"
             />
@@ -161,7 +158,7 @@ function AboutUsPage() {
       <section className="bg-primary-bg pb-14 pt-10 md:pb-20">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-8 lg:px-10">
           <h3 className="mb-10 text-start font-sans text-h4-bold text-primary md:mb-12 md:text-h5-bold lg:text-h4-bold">
-            {t('aboutPage.processHeading')}
+            Ձևակերպումից մինչև ձեր դարակը
           </h3>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6 lg:gap-8">
             {processItems.map(item => (

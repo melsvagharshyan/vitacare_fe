@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['react-slick', 'slick-carousel', 'react-i18next', 'i18next'],
+    include: ['react-slick', 'slick-carousel'],
     force: true,
   },
   server: {

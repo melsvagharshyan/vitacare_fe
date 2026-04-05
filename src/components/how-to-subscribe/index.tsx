@@ -1,32 +1,31 @@
-import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import Button from '../button';
 import { HOW_TO_SUBSCRIBE_IMAGES } from './utils/images';
 
 function HowToSubscribe() {
-  const { t } = useTranslation();
-
-  // ✅ ready hook
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const steps = [
     {
       id: 'choose-plan',
       image: HOW_TO_SUBSCRIBE_IMAGES.step1,
-      title: t('howToSubscribe.steps.choosePlan.title'),
-      description: t('howToSubscribe.steps.choosePlan.description'),
+      title: 'Քայլ 1 – Ընտրեք պլանը',
+      description:
+        'Դիտեք ընտանեկան փաթեթները, գրասենյակային համակցությունները կամ կառուցեք անհատական stack։',
     },
     {
       id: 'customize-menu',
       image: HOW_TO_SUBSCRIBE_IMAGES.step2,
-      title: t('howToSubscribe.steps.customizeMenu.title'),
-      description: t('howToSubscribe.steps.customizeMenu.description'),
+      title: 'Քայլ 2 – Կարգավորեք stack-ը',
+      description:
+        'Սահմանեք դոզաները, ավելացրեք կամ փոխարինեք արտադրանքը և ընտրեք առաքման հաճախականությունը։',
     },
     {
       id: 'receive-enjoy',
       image: HOW_TO_SUBSCRIBE_IMAGES.step3,
-      title: t('howToSubscribe.steps.receiveEnjoy.title'),
-      description: t('howToSubscribe.steps.receiveEnjoy.description'),
+      title: 'Քայլ 3 – Ստացեք և պահպանեք կայունություն',
+      description:
+        'Մենք փաթեթավորում և առաքում ենք ձեր գրաֆիկով։ Հիշեցումները օգնում են չբաց թողնել օրը։',
     },
   ];
 
@@ -35,9 +34,12 @@ function HowToSubscribe() {
       <div className="flex w-full flex-col items-center justify-center gap-10 max-w-300">
         <div className="flex flex-col items-start text-start gap-4 self-start md:ml-4">
           <h2 className="text-primary font-extrabold text-3xl md:text-4xl lg:text-h2 leading-tight tracking-normal">
-            {t('howToSubscribe.title')}
+            Ինչպես է աշխատում
           </h2>
-          <p className="text-gray-80 text-body-large max-w-170">{t('howToSubscribe.subtitle')}</p>
+          <p className="text-gray-80 text-body-large max-w-170">
+            Սկսեք ձեր վիտամինների ռեժիմը երեք պարզ քայլով․ ընտրեք պլանը, կարգավորեք արտադրանքը և ստացեք առաքում ձեր
+            գրաֆիկով։
+          </p>
         </div>
 
         <div className="w-full">
@@ -74,13 +76,12 @@ function HowToSubscribe() {
           </div>
         </div>
 
-        {/* ✅ Button */}
         <div className="flex items-center justify-center md:justify-end max-w-290 w-full">
           <Button
             variant="primary"
             size={isMobile ? 'small' : 'large'}
             tone="green"
-            title={t('howToSubscribe.cta')}
+            title="Դիտել վիտամինները"
           />
         </div>
       </div>

@@ -4,22 +4,22 @@ export const contactFormSchema = z.object({
   name: z
     .string()
     .trim()
-    .min(1, 'contactPage.validation.nameRequired')
-    .max(100, 'contactPage.validation.nameTooLong'),
+    .min(1, 'Մուտքագրեք անունը')
+    .max(100, 'Անունը չափազանց երկար է'),
   email: z
-    .email('contactPage.validation.emailInvalid')
+    .email('Մուտքագրեք վավեր էլ. փոստի հասցե')
     .trim()
-    .min(1, 'contactPage.validation.emailRequired'),
+    .min(1, 'Մուտքագրեք էլ. փոստը'),
   subject: z
     .string()
     .trim()
-    .min(1, 'contactPage.validation.subjectRequired')
-    .max(150, 'contactPage.validation.subjectTooLong'),
+    .min(1, 'Մուտքագրեք թեման')
+    .max(150, 'Թեման չափազանց երկար է'),
   message: z
     .string()
     .trim()
-    .min(1, 'contactPage.validation.messageRequired')
-    .max(2000, 'contactPage.validation.messageTooLong'),
+    .min(1, 'Մուտքագրեք հաղորդագրությունը')
+    .max(2000, 'Հաղորդագրությունը չափազանց երկար է'),
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;

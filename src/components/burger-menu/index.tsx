@@ -1,9 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo } from 'react';
 
-import Button from '../button';
-import LanguageSelector from '../language-selector';
 import { NAV_LINKS } from '../header/utils/constants';
 import { MOCK_HOME_DATA } from '~/data/mockHomeData';
 import { socialIconByKey } from '~/data/socialIcons';
@@ -24,12 +21,9 @@ const burgerContact = {
 interface BurgerMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenWelcomeModal?: () => void;
 }
 
-function BurgerMenu({ isOpen, onClose, onOpenWelcomeModal }: BurgerMenuProps) {
-  const { t } = useTranslation();
-
+function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
   const workingHours = useMemo(() => {
     const { weekStart, weekEnd, workStartTime, workEndTime } = MOCK_HOME_DATA;
     if (!weekStart || !weekEnd || !workStartTime || !workEndTime) {
@@ -37,10 +31,10 @@ function BurgerMenu({ isOpen, onClose, onOpenWelcomeModal }: BurgerMenuProps) {
     }
 
     return {
-      label: getWeekRangeLabel(weekStart, weekEnd, t),
+      label: getWeekRangeLabel(weekStart, weekEnd),
       timeRange: `${workStartTime} - ${workEndTime}`,
     };
-  }, [t]);
+  }, []);
 
   const socialLinks = MOCK_HOME_DATA.links;
 
@@ -68,42 +62,19 @@ function BurgerMenu({ isOpen, onClose, onOpenWelcomeModal }: BurgerMenuProps) {
                 className="transition-colors text-[#999999] text-body-large-small"
                 onClick={onClose}
               >
-                {t('header.main')}
+                Գլխավոր
               </NavLink>
               {NAV_LINKS.map(({ label, href }) => (
                 <NavLink
-                  key={label}
+                  key={href}
                   to={href}
                   className="transition-colors text-body-large-small"
                   onClick={onClose}
                 >
-                  {t(label)}
+                  {label}
                 </NavLink>
               ))}
             </nav>
-            <div className="flex flex-col items-center gap-6 pb-5">
-              <div className="flex w-full items-center justify-center gap-4">
-                <Button
-                  variant="secondary"
-                  size="small"
-                  tone="green"
-                  className="text-body-medium-bold uppercase flex-1"
-                  title={t('header.logIn')}
-                  onClick={onOpenWelcomeModal}
-                />
-
-                <Button
-                  variant="primary"
-                  size="small"
-                  tone="green"
-                  className="text-body-medium-bold uppercase flex-1"
-                  title={t('header.register')}
-                  onClick={onOpenWelcomeModal}
-                />
-              </div>
-
-              <LanguageSelector mobileVisible className="self-center" />
-            </div>
           </div>
 
           <div className="-mx-6 mt-auto bg-primary px-6 py-4 text-white">

@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import Button from '../../components/button';
 import TextInput from '../../components/text-input';
@@ -72,7 +71,6 @@ function ContactInfoCard({
 }
 
 function ContactsPage() {
-  const { t } = useTranslation();
   const methods = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -91,23 +89,23 @@ function ContactsPage() {
   const contactItems = [
     {
       id: 'phone',
-      title: t('contactPage.callTitle'),
-      lineOne: t('contactPage.callLineOne'),
-      lineTwo: t('contactPage.callLineTwo'),
+      title: 'Զանգահարեք մեզ',
+      lineOne: '+374 94 000 000',
+      lineTwo: 'Երկ - Ուրբ, 9:00 - 20:00',
       iconSrc: CONTACT_ICONS.phone,
     },
     {
       id: 'email',
-      title: t('contactPage.emailTitle'),
-      lineOne: t('contactPage.emailLineOne'),
-      lineTwo: t('contactPage.emailLineTwo'),
+      title: 'Գրեք մեզ',
+      lineOne: 'hello@vital.am',
+      lineTwo: 'Սեղմեք՝ նամակ ուղարկելու համար',
       iconSrc: CONTACT_ICONS.email,
     },
     {
       id: 'location',
-      title: t('contactPage.visitTitle'),
-      lineOne: t('contactPage.visitLineOne'),
-      lineTwo: t('contactPage.visitLineTwo'),
+      title: 'Այցելեք մեզ',
+      lineOne: '291 Street, Kentron',
+      lineTwo: 'Երևան, Հայաստան',
       iconSrc: CONTACT_ICONS.location,
     },
   ];
@@ -115,10 +113,10 @@ function ContactsPage() {
   return (
     <main className="w-full bg-primary-bg">
       <ContactHero
-        title={t('contactPage.heroTitle')}
-        subtitle={t('contactPage.heroSubtitle')}
+        title="Կոնտակտներ"
+        subtitle="Մենք այստեղ ենք օգնելու"
         imageUrl={PLACEHOLDER_IMAGES.hero}
-        ctaLabel={t('contactPage.heroCta')}
+        ctaLabel="Զանգահարել +374 94 033 030"
       />
 
       <section className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 px-4 py-6 md:grid-cols-3 md:px-8 md:py-8 lg:px-10">
@@ -134,46 +132,44 @@ function ContactsPage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-12 md:px-8 md:pb-16 lg:px-10">
-        <h2 className="mb-5 text-h4-bold text-primary md:text-h5-bold">
-          {t('contactPage.formTitle')}
-        </h2>
+        <h2 className="mb-5 text-h4-bold text-primary md:text-h5-bold">Ուղարկեք հաղորդագրություն</h2>
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           <form className="space-y-3" onSubmit={methods.handleSubmit(onSubmit)} noValidate>
             <TextInput
               name="name"
               control={methods.control}
               type="text"
-              placeholder={t('contactPage.formName')}
+              placeholder="Ձեր անունը"
             />
             <TextInput
               name="email"
               control={methods.control}
               type="email"
-              placeholder={t('contactPage.formEmail')}
+              placeholder="Ձեր էլ. փոստը"
             />
             <TextInput
               name="subject"
               control={methods.control}
               type="text"
-              placeholder={t('contactPage.formSubject')}
+              placeholder="Թեմա"
             />
             <TextareaInput
               name="message"
               control={methods.control}
               rows={6}
-              placeholder={t('contactPage.formMessage')}
+              placeholder="Ձեր հաղորդագրությունը"
             />
 
             <Button
               type="submit"
               variant="primary"
-              title={t('contactPage.formButton')}
+              title="ՈՒՂԱՐԿԵԼ"
               size="large"
               tone="green"
               className="w-full"
             />
           </form>
-          <ContactMap title={t('contactPage.mapAlt')} lat={40.186077} lng={44.515075} zoom={18} />
+          <ContactMap title="Քարտեզ" lat={40.186077} lng={44.515075} zoom={18} />
         </div>
       </section>
     </main>

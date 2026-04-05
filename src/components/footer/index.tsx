@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import logoGreen from '~/assets/images/logo-green.webp';
 import { MAIN_LINKS, REPORTS_LINKS } from './utils/constants';
@@ -21,8 +20,6 @@ const footerContact = {
 };
 
 const Footer = () => {
-  const { t } = useTranslation();
-
   const workingHours = useMemo(() => {
     const { weekStart, weekEnd, workStartTime, workEndTime } = MOCK_HOME_DATA;
     if (!weekStart || !weekEnd || !workStartTime || !workEndTime) {
@@ -30,10 +27,10 @@ const Footer = () => {
     }
 
     return {
-      label: getWeekRangeLabel(weekStart, weekEnd, t),
+      label: getWeekRangeLabel(weekStart, weekEnd),
       timeRange: `${workStartTime} - ${workEndTime}`,
     };
-  }, [t]);
+  }, []);
 
   const socialLinks = MOCK_HOME_DATA.links;
 
@@ -48,17 +45,17 @@ const Footer = () => {
         {/* Main Navigation */}
         <nav className="flex shrink-0 flex-col gap-3" aria-label="Main navigation">
           <span className="text-sm leading-5 text-white/90 sm:text-base sm:leading-6 lg:text-xl lg:leading-7">
-            {t('footer.main')}
+            Գլխավոր
           </span>
 
           <ul className="flex flex-col gap-2">
             {MAIN_LINKS.map(({ label, href }) => (
-              <li key={label}>
+              <li key={href}>
                 <a
                   href={href}
                   className="text-sm leading-5 transition-opacity hover:opacity-90 sm:text-base sm:leading-6 lg:text-xl lg:leading-7"
                 >
-                  {t(label)}
+                  {label}
                 </a>
               </li>
             ))}
@@ -68,17 +65,17 @@ const Footer = () => {
         {/* Reports / Legal */}
         <nav className="flex shrink-0 flex-col gap-3" aria-label="Reports and legal">
           <span className="text-sm leading-5 text-white/90 sm:text-base sm:leading-6 lg:text-xl lg:leading-7">
-            {t('footer.reports')}
+            Հաշվետվություններ
           </span>
 
           <ul className="flex flex-col gap-2">
             {REPORTS_LINKS.map(({ label, href }) => (
-              <li key={label}>
+              <li key={href}>
                 <a
                   href={href}
                   className="text-sm leading-5 transition-opacity hover:opacity-90 sm:text-base sm:leading-6 lg:text-xl lg:leading-7"
                 >
-                  {t(label)}
+                  {label}
                 </a>
               </li>
             ))}

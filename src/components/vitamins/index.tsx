@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import Button from '../button';
 import arrowLeftIcon from './utils/icons/arrow-left.svg';
@@ -10,7 +9,6 @@ import arrowRightIcon from './utils/icons/arrow-right.svg';
 import { MOCK_VITAMINS } from '~/data/mockVitamins';
 
 function Vitamins() {
-  const { t } = useTranslation();
   const navigate = useNavigate();
   const sliderRef = useRef<Slider | null>(null);
 
@@ -52,7 +50,7 @@ function Vitamins() {
     <section className="flex w-full items-center justify-center bg-primary py-4 md:py-16 px-4 md:px-8 lg:px-10 xl:px-10 2xl:px-60 overflow-x-hidden">
       <div className="flex w-full flex-col items-center justify-center gap-6 md:gap-10 max-w-7xl">
         <h2 className="text-white relative z-10 self-start md:ml-4 font-extrabold text-2xl md:text-4xl lg:text-h2 leading-tight md:leading-15 tracking-normal wrap-break-word">
-          {t('vitamins.title')}
+          Վիտամիններ
         </h2>
 
         <div className="w-full">
@@ -73,9 +71,7 @@ function Vitamins() {
                       {item.title}
                     </h3>
                     <p className="text-body-small">{item.description}</p>
-                    <p className="text-primary font-semibold text-sm md:text-base text-end">
-                      {item.price}
-                    </p>
+                    <p className="text-primary font-semibold text-sm md:text-base text-end">{item.price}</p>
                   </div>
 
                   <div
@@ -89,7 +85,7 @@ function Vitamins() {
                       variant="secondary"
                       size="large"
                       tone="light"
-                      title={t('vitamins.seeMore')}
+                      title="Տեսնել ավելին"
                       className="pointer-events-auto text-sm md:text-base"
                       onClick={e => {
                         e.stopPropagation();
@@ -109,7 +105,7 @@ function Vitamins() {
               type="button"
               onClick={handlePrev}
               className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-primary  hover:bg-white/25 transition-colors cursor-pointer"
-              aria-label={t('vitamins.prevAriaLabel')}
+              aria-label="Նախորդ արտադրանքը"
             >
               <img src={arrowLeftIcon} alt="" className="h-5 w-5" aria-hidden />
             </button>
@@ -117,7 +113,7 @@ function Vitamins() {
               type="button"
               onClick={handleNext}
               className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-primary  hover:bg-white/25 transition-colors cursor-pointer"
-              aria-label={t('vitamins.nextAriaLabel')}
+              aria-label="Հաջորդ արտադրանքը"
             >
               <img src={arrowRightIcon} alt="" className="h-5 w-5" aria-hidden />
             </button>

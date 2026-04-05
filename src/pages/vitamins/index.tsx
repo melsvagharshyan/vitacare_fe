@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/button';
 import { MOCK_VITAMINS } from '~/data/mockVitamins';
@@ -92,7 +91,6 @@ function VitaminPlanCard({
 }
 
 function VitaminsPage() {
-  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const sortedItems = useMemo(() => [...MOCK_VITAMINS].sort((a, b) => a.id - b.id), []);
@@ -104,24 +102,25 @@ function VitaminsPage() {
   return (
     <main className="w-full bg-primary-bg">
       <VitaminsHero
-        title={t('vitaminPage.heroTitle')}
-        subtitle={t('vitaminPage.heroSubtitle')}
+        title="Վիտամիններ"
+        subtitle="Ընտրված հավելումներ տան, գրասենյակի և թիմերի համար"
         imageUrl={VITAMIN_PAGE_HERO_IMAGE}
-        imageAlt={t('vitaminPage.imgHeroAlt')}
+        imageAlt="Վիտամիններ և հավելումներ"
       />
 
       <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16 lg:px-10">
         <p className="mx-auto mb-12 max-w-4xl text-center text-body-large text-gray-80 md:mb-14 md:text-h4">
-          {t('vitaminPage.intro')}
+          Vital-ն մատակարարում է լաբորատոր ստուգված վիտամիններ և հավելումներ՝ ընտանիքների, ընկերությունների և
+          անհատների համար։ Պատրաստ փաթեթներ կամ ձեր սեփական համակցությունը՝ որակյալ արտադրանք, երբ անհրաժեշտ է։
         </p>
 
         <section>
           <h2 className="mb-8 text-left text-h6-small text-primary md:mb-10 md:text-h5-bold lg:text-h4-bold">
-            {t('vitaminPage.sectionHeading')}
+            Վիտամիններ
           </h2>
 
           {sortedItems.length === 0 ? (
-            <p className="text-center text-body-medium text-gray-80">{t('vitaminPage.empty')}</p>
+            <p className="text-center text-body-medium text-gray-80">Այս պահին հասանելի արտադրանք չկա։</p>
           ) : (
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8">
               {sortedItems.map(item => (
@@ -132,7 +131,7 @@ function VitaminsPage() {
                   title={item.title}
                   description={item.description}
                   price={item.price}
-                  ctaLabel={t('vitamins.seeMore')}
+                  ctaLabel="Տեսնել ավելին"
                   onCta={() => goToDetail(item.id)}
                 />
               ))}

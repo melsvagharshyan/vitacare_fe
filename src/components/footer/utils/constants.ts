@@ -1,12 +1,12 @@
 export const MAIN_LINKS = [
-  { label: 'header.aboutUs', href: '/about-us' },
-  { label: 'header.vitamins', href: '/vitamins' },
-  { label: 'header.blogNews', href: '/blog-news' },
-  { label: 'header.contactUs', href: '/contacts' },
+  { label: 'Մեր մասին', href: '/about-us' },
+  { label: 'Վիտամիններ', href: '/vitamins' },
+  { label: 'Բլոգ / Նորություններ', href: '/blog-news' },
+  { label: 'Կապ մեզ հետ', href: '/contacts' },
 ] as const;
 
 export const REPORTS_LINKS = [
-  { label: 'footer.faq', href: '#' },
-  { label: 'footer.termsOfUse', href: '#' },
-  { label: 'footer.privacyPolicy', href: '#' },
+  { label: 'ՀՏՀ', href: '#' },
+  { label: 'Օգտագործման պայմաններ', href: '#' },
+  { label: 'Գաղտնիության քաղաքականություն', href: '#' },
 ] as const;

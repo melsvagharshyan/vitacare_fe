@@ -1,22 +1,20 @@
-import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 import { getVitaminById } from '~/data/mockVitamins';
 
 function VitaminDetailPage() {
-  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const item = getVitaminById(id);
 
   if (!item) {
     return (
       <main className="mx-auto w-full max-w-3xl px-4 py-16 md:py-24">
-        <p className="text-center text-body-large text-gray-80">{t('vitamins.detailNotFound')}</p>
+        <p className="text-center text-body-large text-gray-80">Այդ արտադրանքը չի գտնվել։</p>
         <div className="mt-8 flex justify-center">
           <Link
             to="/vitamins"
             className="text-primary font-semibold underline underline-offset-4 hover:text-primary-dark"
           >
-            {t('vitamins.detailBack')}
+            Վերադառնալ բոլոր վիտամիններին
           </Link>
         </div>
       </main>
@@ -30,7 +28,7 @@ function VitaminDetailPage() {
           to="/vitamins"
           className="inline-flex text-body-medium text-primary font-semibold hover:text-primary-dark mb-6 md:mb-8"
         >
-          ← {t('vitamins.detailBack')}
+          ← Վերադառնալ բոլոր վիտամիններին
         </Link>
 
         <article className="overflow-hidden rounded-2xl bg-white shadow-sm">

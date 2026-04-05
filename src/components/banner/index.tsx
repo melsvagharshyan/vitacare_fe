@@ -14,8 +14,8 @@ const MOCK_BANNERS: BannerItem[] = [
     order: 0,
     createdAt: '',
     updatedAt: '',
-    title: 'Your daily vitamins, simplified',
-    buttonText: 'Shop vitamins',
+    title: 'ԱՌՈՂՋՈՒԹՅՈՒՆԸ՝ ՊԱՐԴԱԳԵՎ',
+    buttonText: 'ՏԵՍՆԵԼ ՎԻՏԱՄԻՆՆԵՐԸ',
     buttonColor: '#1a1a1a',
     buttonBg: '#ffffff',
   },
@@ -26,8 +26,8 @@ const MOCK_BANNERS: BannerItem[] = [
     order: 1,
     createdAt: '',
     updatedAt: '',
-    title: 'Science-backed wellness',
-    buttonText: 'See plans',
+    title: 'Գիտականորեն հիմնավորած առողջություն',
+    buttonText: 'Դիտել պլանները',
     buttonColor: '#ffffff',
     buttonBg: '#c45c26',
   },
@@ -94,7 +94,7 @@ function Banner() {
               `h-3 w-3 rounded-full transition-all duration-200 cursor-pointer ` +
               (activeIndex === index ? 'bg-white w-6' : 'bg-white/50 hover:bg-white/60')
             }
-            aria-label={`Go to slide ${index + 1}`}
+            aria-label={`Անցնել սլայդ ${index + 1}`}
           />
         ))}
       </div>

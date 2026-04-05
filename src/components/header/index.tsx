@@ -1,5 +1,4 @@
 import { useCallback, useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import logoGreen from '~/assets/images/logo-green.webp';
 import burgerMenuIcon from '~/assets/icons/burger-menu.svg';
@@ -8,8 +7,6 @@ import { NAV_LINKS } from './utils/constants';
 import { useHeaderState } from './utils/use-header-scroll';
 import BurgerMenu from '../burger-menu';
 
-import LanguageSelector from '../language-selector';
-import Button from '../button';
 import { formatEmailHref, formatPhoneDisplay, formatPhoneHref } from '~/utils/helpers';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { MOCK_HOME_DATA } from '~/data/mockHomeData';
@@ -24,24 +21,17 @@ const headerContact = {
 
 const headerSocialLinks = MOCK_HOME_DATA.links;
 
-interface HeaderProps {
-  onOpenWelcomeModal?: () => void;
-}
-
-function Header({ onOpenWelcomeModal }: HeaderProps) {
-  const { t } = useTranslation();
+function Header() {
   const { showTopBar, headerHeight, fixedHeaderContentRef } = useHeaderState();
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Close mobile menu when the user navigates (in-page route change).
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reset drawer on pathname change
     setMobileMenuOpen(false);
   }, [location.pathname]);
-
-  const handleOpenModal = useCallback(() => {
-    onOpenWelcomeModal?.();
-  }, [onOpenWelcomeModal]);
 
   const handleLogoClick = useCallback(() => {
     navigate('/');
@@ -112,36 +102,14 @@ function Header({ onOpenWelcomeModal }: HeaderProps) {
               <nav className="hidden items-center gap-14 font-medium text-slate-800 lg:flex">
                 {NAV_LINKS.map(({ label, href }) => (
                   <NavLink
-                    key={label}
+                    key={href}
                     to={href}
                     className="text-body-medium transition-colors hover:text-primary"
                   >
-                    {t(label)}
+                    {label}
                   </NavLink>
                 ))}
               </nav>
-            </div>
-
-            <div className="hidden items-center gap-4 lg:flex">
-              <Button
-                variant="secondary"
-                size="small"
-                tone="green"
-                className="text-body-medium-bold uppercase"
-                title={t('header.logIn')}
-                onClick={handleOpenModal}
-              />
-
-              <Button
-                variant="primary"
-                size="small"
-                tone="green"
-                className="text-body-medium-bold uppercase"
-                title={t('header.register')}
-                onClick={handleOpenModal}
-              />
-
-              <LanguageSelector />
             </div>
 
             {/* ✅ Burger visible for mobile + tablet */}
@@ -149,7 +117,7 @@ function Header({ onOpenWelcomeModal }: HeaderProps) {
               type="button"
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md lg:hidden"
               onClick={() => setMobileMenuOpen(open => !open)}
-              aria-label={mobileMenuOpen ? t('header.closeMenu') : t('header.openMenu')}
+              aria-label={mobileMenuOpen ? 'Փակել մենյուն' : 'Բացել մենյուն'}
             >
               <img
                 src={mobileMenuOpen ? closeBurgerIcon : burgerMenuIcon}
@@ -160,11 +128,7 @@ function Header({ onOpenWelcomeModal }: HeaderProps) {
           </div>
 
           {/* Mobile / Tablet Fullscreen Menu */}
-          <BurgerMenu
-            isOpen={mobileMenuOpen}
-            onClose={() => setMobileMenuOpen(false)}
-            onOpenWelcomeModal={handleOpenModal}
-          />
+          <BurgerMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
         </div>
       </header>
     </>

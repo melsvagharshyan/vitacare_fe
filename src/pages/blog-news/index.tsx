@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
-import { useTranslation } from 'react-i18next';
 import Button from '../../components/button';
 import { filterOptions, type CategoryFilter } from './utils/constants';
 
@@ -10,9 +9,16 @@ const PLACEHOLDER_IMAGES = {
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ZJMkpJoYOJPyV728KwCNcxw3x6MNR3qg2w&s',
 } as const;
 
+const CATEGORY_LABELS: Record<Exclude<CategoryFilter, 'all'>, string> = {
+  healthTips: 'Առողջության խորհուրդներ',
+  recipes: 'Արտադրանքի ուղեցույցներ',
+  nutrition: 'Բաղադրիչներ',
+};
+
 type ArticleItem = {
   id: number;
   category: Exclude<CategoryFilter, 'all'>;
+  categoryLabel: string;
   title: string;
   excerpt: string;
   publishDate: string;
@@ -100,7 +106,7 @@ function BlogCard({ article }: { article: ArticleItem }) {
         />
       </div>
       <div className="space-y-2 px-3 py-5">
-        <p className="text-body-small text-[#808080]">{article.category}</p>
+        <p className="text-body-small text-[#808080]">{article.categoryLabel}</p>
         <h3 className="m-0 text-h6-bold text-gray-80">{article.title}</h3>
         <p className="m-0 line-clamp-2 text-body-medium text-text-muted">{article.excerpt}</p>
         <p className="mt-3 text-body-small text-text-muted">{article.publishDate}</p>
@@ -110,7 +116,6 @@ function BlogCard({ article }: { article: ArticleItem }) {
 }
 
 function BlogNewsPage() {
-  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState<CategoryFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [visibleCount, setVisibleCount] = useState(6);
@@ -118,16 +123,21 @@ function BlogNewsPage() {
   // TODO: Replace this mock data with backend response.
   const articleItems = useMemo<ArticleItem[]>(
     () =>
-      Array.from({ length: 9 }, (_, index) => ({
-        id: index + 1,
-        category: (['healthTips', 'recipes', 'nutrition'] as const)[index % 3],
-        title: t('blogPage.cardTitle'),
-        excerpt: t('blogPage.cardExcerpt'),
-        publishDate: t('blogPage.publishDate'),
-        imageUrl: PLACEHOLDER_IMAGES.article,
-        imageAlt: t('blogPage.cardImageAlt'),
-      })),
-    [t]
+      Array.from({ length: 9 }, (_, index) => {
+        const category = (['healthTips', 'recipes', 'nutrition'] as const)[index % 3];
+        return {
+          id: index + 1,
+          category,
+          categoryLabel: CATEGORY_LABELS[category],
+          title: 'Վիտամին D․ որքա՞ն է իրականում անհրաժեշտ',
+          excerpt:
+            'Lorem ipsum dolor sit amet consectetur. Enim ut id ut tempus nibh vitae in et sed. Sit cras malesuada est in tincidunt.',
+          publishDate: 'Հրապարակման ամսաթիվ',
+          imageUrl: PLACEHOLDER_IMAGES.article,
+          imageAlt: 'Հավելումներ և առողջ ապրելակերպ',
+        };
+      }),
+    []
   );
 
   const displayedArticles = articleItems
@@ -147,10 +157,10 @@ function BlogNewsPage() {
   return (
     <main className="w-full bg-primary-bg">
       <BlogHero
-        title={t('blogPage.heroTitle')}
-        subtitle={t('blogPage.heroSubtitle')}
+        title="Բլոգ / Նորություններ"
+        subtitle="Ուղեցույցներ, հետազոտություններ և խորհուրդներ հավելումների մասին"
         imageUrl={PLACEHOLDER_IMAGES.hero}
-        searchPlaceholder={t('blogPage.searchPlaceholder')}
+        searchPlaceholder="Որոնել հոդվածներ..."
         searchValue={searchQuery}
         onSearchChange={setSearchQuery}
       />
@@ -161,7 +171,7 @@ function BlogNewsPage() {
             <CategoryChip
               key={option.id}
               active={activeFilter === option.id}
-              label={t(option.label)}
+              label={option.label}
               onClick={() => {
                 setActiveFilter(option.id);
                 setVisibleCount(6);
@@ -177,9 +187,7 @@ function BlogNewsPage() {
         </div>
 
         {visibleArticles.length === 0 ? (
-          <p className="py-12 text-center text-body-large text-text-muted">
-            {t('blogPage.noResults')}
-          </p>
+          <p className="py-12 text-center text-body-large text-text-muted">Հոդվածներ չեն գտնվել</p>
         ) : null}
 
         {hasMore ? (
@@ -188,7 +196,7 @@ function BlogNewsPage() {
               type="button"
               variant="secondary"
               tone="green"
-              title={t('blogPage.loadMore')}
+              title="ՏԵՍՆԵԼ ԱՎԵԼԻՆ"
               onClick={() => setVisibleCount(prev => prev + 3)}
             />
           </div>
