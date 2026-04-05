@@ -1,13 +1,10 @@
-import frame145Svg from '~/assets/images/about-us.svg';
 import yBackground from '~/assets/images/y.svg';
-import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from '../button';
 import { useNavigate } from 'react-router-dom';
-import { useForkAnimation } from './utils/hooks/useForkAnimation';
-import { useInView } from './utils/hooks/useInView';
-import { useInlineSvg } from './utils/hooks/useInlineSvg';
 import { splitMultiline } from './utils/helpers/splitMultiline';
+
+const ABOUT_US_IMAGE = 'https://i.pinimg.com/1200x/90/08/af/9008af8d54095a38be2d3f3abac7db08.jpg';
 
 function AboutUs() {
   const { t } = useTranslation();
@@ -17,17 +14,8 @@ function AboutUs() {
     navigate('/about-us');
   };
 
-  const aboutUsSectionRef = useRef<HTMLElement | null>(null);
-  const svgContainerRef = useRef<HTMLDivElement | null>(null);
-
-  const isAboutUsInView = useInView(aboutUsSectionRef, '-20% 0px -55% 0px');
-  const svgLoaded = useInlineSvg(svgContainerRef, frame145Svg);
-
-  useForkAnimation(svgContainerRef, isAboutUsInView, svgLoaded);
-
   return (
     <section
-      ref={aboutUsSectionRef}
       className="w-full flex justify-center bg-primary-bg 
       py-8
       md:pt-12 md:pb-16   /* ✅ tablet spacing */
@@ -35,7 +23,7 @@ function AboutUs() {
       px-4 md:px-8 lg:px-10 xl:px-10 2xl:px-60"
     >
       <div className="w-full flex flex-col xl:flex-row items-center justify-between gap-8 md:gap-10 lg:gap-16">
-        {/* LEFT (SVG) */}
+        {/* LEFT (image) */}
         <div className="order-2 xl:order-1 w-full flex justify-center md:justify-center max-md:justify-start">
           <div
             className="
@@ -44,13 +32,20 @@ function AboutUs() {
             md:max-w-125   /* ✅ better tablet width */
             lg:max-w-150   /* ✅ larger tablet */
             overflow-hidden 
+            rounded-2xl
             max-md:-translate-x-24 max-md:translate-y-8 
             md:translate-x-0 md:translate-y-0
             md:scale-95        /* ✅ slightly shrink for balance */
             lg:scale-100
             "
           >
-            <div ref={svgContainerRef} className="w-full h-full" aria-hidden="true" />
+            <img
+              src={ABOUT_US_IMAGE}
+              alt={t('aboutUs.title')}
+              className="w-full h-auto object-cover block"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
 
