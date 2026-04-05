@@ -17,15 +17,15 @@ body {
   color: theme('colors.text-deep');
 }
 
-/* Ensure equal-height slides in subscriptions carousel */
-.subscriptions-slider .slick-track {
+/* Ensure equal-height slides in vitamins carousel */
+.vitamins-slider .slick-track {
   display: flex !important;
 }
 
-.subscriptions-slider .slick-slide {
+.vitamins-slider .slick-slide {
   height: auto;
 }
 
-.subscriptions-slider .slick-slide > div {
+.vitamins-slider .slick-slide > div {
   height: 100%;
 }

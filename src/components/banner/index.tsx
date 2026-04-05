@@ -15,7 +15,7 @@ const MOCK_BANNERS: BannerItem[] = [
     createdAt: '',
     updatedAt: '',
     title: 'Your daily vitamins, simplified',
-    buttonText: 'Shop subscriptions',
+    buttonText: 'Shop vitamins',
     buttonColor: '#1a1a1a',
     buttonBg: '#ffffff',
   },

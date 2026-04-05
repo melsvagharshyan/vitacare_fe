@@ -2,7 +2,7 @@
   "header": {
     "main": "Main",
     "aboutUs": "About us",
-    "subscriptions": "Subscriptions",
+    "vitamins": "Vitamins",
     "blogNews": "Blog / News",
     "contactUs": "Contact us",
     "logIn": "Log in",
@@ -12,7 +12,7 @@
   },
   "hero": {
     "headline": "WELLNESS MADE SIMPLE",
-    "ctaButton": "SEE SUBSCRIPTIONS"
+    "ctaButton": "SEE VITAMINS"
   },
   "aboutUs": {
     "title": "About Us",
@@ -37,18 +37,18 @@
     "processDeliveredTitle": "Shipped with care",
     "processDeliveredDescription": "Temperature-aware packing and reliable carriers keep your supplements protected in transit.",
     "processEnjoyTitle": "Build your routine",
-    "processEnjoyDescription": "Subscribe for automatic refills or order as you go—consistency is easier when we handle the rest.",
+    "processEnjoyDescription": "Set up repeat deliveries or order as you go—consistency is easier when we handle the rest.",
     "imgHeroAlt": "Vitamins and supplement bottles on a bright surface",
     "imgChefAlt": "Specialist reviewing supplement formulations",
     "imgProcessCraftedAlt": "Quality control of vitamin products",
     "imgProcessDeliveredAlt": "Wellness package ready for delivery",
     "imgProcessEnjoyAlt": "Person taking daily vitamins at home"
   },
-  "subscriptionPage": {
-    "heroTitle": "Subscriptions",
-    "heroSubtitle": "Vitamin plans for home, office, and teams",
-    "intro": "Vital offers flexible supplement subscriptions for families, companies, and individuals. Choose curated packs or build your own stack—fresh batches on your schedule without running out.",
-    "sectionHeading": "Subscriptions",
+  "vitaminPage": {
+    "heroTitle": "Vitamins",
+    "heroSubtitle": "Curated supplements for home, office, and teams",
+    "intro": "Vital brings lab-tested vitamins and supplements to families, companies, and individuals. Choose curated packs or build your own stack—quality products delivered when you need them.",
+    "sectionHeading": "Vitamins",
     "cardFamiliesTitle": "For families",
     "cardFamiliesDescription": "Daily multivitamins and essentials for adults and kids in one household plan.",
     "cardTeamsTitle": "For teams",
@@ -60,10 +60,10 @@
     "imgHeroAlt": "Assorted vitamins and supplements",
     "imgFamiliesAlt": "Family wellness routine at home",
     "imgTeamsAlt": "Workplace wellness supplements",
-    "imgPersonalizedAlt": "Personal vitamin subscription delivery",
-    "loading": "Loading subscriptions…",
-    "loadError": "We couldn’t load subscriptions. Please try again later.",
-    "empty": "No subscriptions are available right now."
+    "imgPersonalizedAlt": "Personal vitamin selection and delivery",
+    "loading": "Loading products…",
+    "loadError": "We couldn’t load products. Please try again later.",
+    "empty": "No products are available right now."
   },
   "contactPage": {
     "heroTitle": "Contacts",
@@ -125,7 +125,7 @@
   },
   "newsPromo": {
     "label": "NEWS",
-    "headline": "Use your company code — get 10% off your first subscription",
+    "headline": "Use your company code — get 10% off your first order",
     "learnMore": "LEARN MORE"
   },
   "weHandle": {
@@ -133,15 +133,15 @@
     "services": {
       "seasonalMenu": "Curated & rotating\nproduct lines",
       "cooking": "Third-party tested\nformulas",
-      "delivery": "Flexible delivery &\nsubscription control"
+      "delivery": "Flexible delivery &\neasy reordering"
     },
     "learnMore": "LEARN MORE"
   },
   "partners": {
     "title": "Partners"
   },
-  "subscriptions": {
-    "title": "Subscriptions",
+  "vitamins": {
+    "title": "Vitamins",
     "familyLunch": {
       "title": "FAMILY WELLNESS",
       "description": "Complete daily support for every age in your home"
@@ -156,12 +156,15 @@
     },
     "viewMore": "VIEW MORE",
     "viewFullMenu": "VIEW ALL PRODUCTS",
-    "prevAriaLabel": "Previous subscription",
-    "nextAriaLabel": "Next subscription"
+    "seeMore": "See more",
+    "detailBack": "Back to all vitamins",
+    "detailNotFound": "We couldn’t find that product.",
+    "prevAriaLabel": "Previous product",
+    "nextAriaLabel": "Next product"
   },
   "howToSubscribe": {
-    "title": "How to subscribe",
-    "subtitle": "Start your vitamin routine in three easy steps: pick a plan, tailor products to your goals, and receive refills automatically—or pause anytime.",
+    "title": "How it works",
+    "subtitle": "Start your vitamin routine in three easy steps: pick a plan, tailor products to your goals, and receive deliveries on your schedule.",
     "steps": {
       "choosePlan": {
         "title": "Step 1 – Choose your plan",
@@ -176,7 +179,7 @@
         "description": "We pack and ship on your schedule. Reminders and flexible dates help you never miss a day."
       }
     },
-    "cta": "See subscriptions"
+    "cta": "See vitamins"
   },
   "modal": {
     "close": "Close",

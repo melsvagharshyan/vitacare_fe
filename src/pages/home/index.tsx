@@ -1,6 +1,6 @@
 import Banner from '../../components/banner';
 import AboutUs from '../../components/about-us';
-import Subscriptions from '../../components/subscriptions';
+import Vitamins from '../../components/vitamins';
 import HowToSubscribe from '../../components/how-to-subscribe';
 import NewsPromo from '../../components/news-promo';
 import WeHandle from '../../components/we-handle';
@@ -11,7 +11,7 @@ function HomePage() {
     <>
       <Banner />
       <AboutUs />
-      <Subscriptions />
+      <Vitamins />
       <HowToSubscribe />
       <NewsPromo />
       <WeHandle />
