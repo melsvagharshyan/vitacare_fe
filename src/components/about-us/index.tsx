@@ -1,4 +1,3 @@
-import yBackground from '~/assets/images/y.svg';
 import Button from '../button';
 import { useNavigate } from 'react-router-dom';
 import { splitMultiline } from './utils/helpers/splitMultiline';

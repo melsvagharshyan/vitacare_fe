@@ -42,7 +42,7 @@ function Header() {
     <>
       <div style={{ height: `${headerHeight}px` }} aria-hidden="true" />
 
-      <header className="fixed inset-x-0 top-0 z-50 w-full bg-white">
+      <header className="fixed inset-x-0 top-0 z-50 w-full bg-white lg:border-b lg:border-white/50 lg:bg-white/65 lg:shadow-[0_8px_32px_rgba(15,23,42,0.06)] lg:backdrop-blur-xl lg:backdrop-saturate-150 lg:supports-[backdrop-filter]:bg-white/55">
         <div ref={fixedHeaderContentRef} className="flex w-full flex-col">
           <div
             className={`hidden overflow-hidden transition-all duration-300 ease-in-out lg:block ${
@@ -88,7 +88,7 @@ function Header() {
           </div>
 
           {/* Main Header */}
-          <div className="flex w-full items-center justify-between bg-white px-4 py-4 lg:px-30">
+          <div className="flex w-full items-center justify-between bg-transparent px-4 py-4 lg:px-30">
             <div className="flex min-w-0 flex-1 items-center gap-8 lg:gap-16">
               <button
                 aria-label="Vital home"
