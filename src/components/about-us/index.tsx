@@ -3,7 +3,8 @@ import Button from '../button';
 import { useNavigate } from 'react-router-dom';
 import { splitMultiline } from './utils/helpers/splitMultiline';
 
-const ABOUT_US_IMAGE = 'https://i.pinimg.com/1200x/90/08/af/9008af8d54095a38be2d3f3abac7db08.jpg';
+const ABOUT_US_IMAGE =
+  'https://solgar.co.uk/cdn/shop/products/Vegan-D3.jpg?v=1714401850&width=1500';
 
 const ABOUT_DESCRIPTION =
   '2011 թվականից մենք օգնել ենք հազարավոր մարդկանց՝ վիտամիններով և հավելումներով ավելի լավ զգալու համար։ Մեր առաքելությունը՝ ազնիվ բանաձևեր, թափանցիկ աղբյուրներ և ձեր դուռը հասնող ռեժիմ։';
@@ -31,7 +32,7 @@ function AboutUs() {
             w-full 
             max-w-165 
             md:max-w-125   /* ✅ better tablet width */
-            lg:max-w-150   /* ✅ larger tablet */
+            lg:max-w-120   /* ✅ larger tablet */
             overflow-hidden 
             rounded-2xl
             max-md:-translate-x-24 max-md:translate-y-8 
@@ -62,13 +63,6 @@ function AboutUs() {
             lg:max-w-150
             "
           >
-            <img
-              src={yBackground}
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:-translate-y-[40%]  lg:-translate-y-1/3  w-61.75 max-w-full md:w-90lg:w-105 z-0 opacity-80"
-            />
-
             <h2
               className="relative z-10 text-primary font-extrabold 
               text-[32px] 

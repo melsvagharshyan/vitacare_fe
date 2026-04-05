@@ -71,7 +71,9 @@ function Vitamins() {
                       {item.title}
                     </h3>
                     <p className="text-body-small">{item.description}</p>
-                    <p className="text-primary font-semibold text-sm md:text-base text-end">{item.price}</p>
+                    <p className="text-primary font-semibold text-sm md:text-base text-end">
+                      {item.price}
+                    </p>
                   </div>
 
                   <div

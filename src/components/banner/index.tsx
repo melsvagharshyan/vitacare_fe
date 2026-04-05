@@ -21,15 +21,15 @@ const MOCK_BANNERS: BannerItem[] = [
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1550572017-edd951aa36f1?w=1920&q=80',
+    image: 'https://i.pinimg.com/1200x/7e/fd/13/7efd13d59a8e994ce890f11a4d1855b7.jpg',
     isActive: true,
     order: 1,
     createdAt: '',
     updatedAt: '',
     title: 'Գիտականորեն հիմնավորած առողջություն',
     buttonText: 'Դիտել պլանները',
-    buttonColor: '#ffffff',
-    buttonBg: '#c45c26',
+    buttonColor: '#1a1a1a',
+    buttonBg: '#ffffff',
   },
 ];
 

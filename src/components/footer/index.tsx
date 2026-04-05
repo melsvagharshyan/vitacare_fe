@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import logoGreen from '~/assets/images/logo-green.webp';
+import logoGreen from '~/assets/logos/logo-green.svg';
 import { MAIN_LINKS, REPORTS_LINKS } from './utils/constants';
 import { MOCK_HOME_DATA } from '~/data/mockHomeData';
 import { socialIconByKey } from '~/data/socialIcons';

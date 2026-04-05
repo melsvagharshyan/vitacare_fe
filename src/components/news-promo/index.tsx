@@ -1,5 +1,4 @@
 import Button from '../button';
-import newsPhoto from './utils/images/discount-photo.svg';
 
 function NewsPromo() {
   return (
@@ -12,10 +11,12 @@ function NewsPromo() {
           h-76.75 md:h-auto 
           bg-cover bg-center bg-no-repeat
         "
-        style={{ backgroundImage: `url(${newsPhoto})` }}
+        style={{
+          backgroundImage: `url(https://solgar.co.uk/cdn/shop/collections/vegan_collection_banner.webp?v=1706790414)`,
+        }}
       >
         <div className="relative z-10 flex-1 space-y-4 text-start lg:text-left md:text-left">
-          <h2 className="text-h6-small md:text-h4-bold leading-snug text-primary max-w-xl mx-auto lg:mx-0">
+          <h2 className="text-h6-small md:text-h4-bold leading-snug text-white max-w-xl mx-auto lg:mx-0">
             Օգտագործեք ձեր ընկերության կոդը՝ 10% զեղչ առաջին պատվերի համար
           </h2>
 

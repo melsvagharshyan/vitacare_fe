@@ -1,6 +1,6 @@
 import { useCallback, useState, useEffect } from 'react';
 
-import logoGreen from '~/assets/images/logo-green.webp';
+import logoGreen from '~/assets/logos/logo-green.svg';
 import burgerMenuIcon from '~/assets/icons/burger-menu.svg';
 import closeBurgerIcon from '~/assets/icons/close-burger.svg';
 import { NAV_LINKS } from './utils/constants';
@@ -96,7 +96,7 @@ function Header() {
                 onClick={handleLogoClick}
                 type="button"
               >
-                <img src={logoGreen} alt="Vital" className="h-14" style={{ fill: 'red' }} />
+                <img src={logoGreen} alt="Vital" className="h-14 w-auto" />
               </button>
 
               <nav className="hidden items-center gap-14 font-medium text-slate-800 lg:flex">

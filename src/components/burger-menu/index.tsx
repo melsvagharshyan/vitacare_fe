@@ -53,7 +53,7 @@ function BurgerMenu({ isOpen, onClose }: BurgerMenuProps) {
 
   return (
     <div className="fixed inset-x-0 bottom-0 top-18 z-60 lg:hidden">
-      <div className="h-full bg-[#e9eeea]">
+      <div className="h-full bg-primary-bg">
         <div className="flex h-full flex-col justify-between px-4 pt-5">
           <div className=" h-full flex flex-col justify-between">
             <nav className="flex flex-col  gap-4 text-[46px] leading-[1.05] text-text-main/80">
